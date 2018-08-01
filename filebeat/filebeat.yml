@@ -1,0 +1,20 @@
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
+    #- c:\programdata\elasticsearch\logs\*
+output.elasticsearch:
+  hosts: ["elk:9200"]
+setup.kibana:
+  host: "elk:5601"
+output.elasticsearch:
+  hosts: ["elk:9200"]
+  username: "elastic"
+  password: "elastic"
+setup.kibana:
+  host: "elk:5601"
+  username: "elastic"  
+  password: "elastic"
+output.logstash:
+  hosts: ["elk:5044"]
